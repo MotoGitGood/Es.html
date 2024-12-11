@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+</head>
+<body>
+    <input type="file" id="myfile" name="select file" onchange="apri(this)">
+    <div id="content"></div>
+    <script>
+        function apri(input) {
+            let file = input.files[0];
+            let reader = new FileReader();
+            reader.readAsText(file);
+            reader.onload = function () {
+                let content = reader.result;
+                let rows = content.split("\n");
+                let table = "<table border='1'><thead>";
+                let headers = rows[0].split(",");
+                table += "<tr>";
+                headers.forEach(header => {
+                    table += `<th>${header.trim()}</th>`;
+                });
+                table += "</tr></thead><tbody>";
+                
+
+                for (let i = 1; i < rows.length; i++) {
+                    let cells = rows[i].split(",");
+                    if (cells.length > 1) {
+                        table += "<tr>";
+                        cells.forEach(cell => {
+                            table += `<td>${cell.trim()}</td>`;
+                        });
+                        table += "</tr>";
+                    }
+                }
+                table += "</tbody></table>";
+                
+                document.getElementById("content").innerHTML = table;
+            };
+        }
+    </script>
+</body>
+</html>
