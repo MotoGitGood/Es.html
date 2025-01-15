@@ -42,10 +42,10 @@
                 let content = reader.result;
                 let rows = content.split("\n");
                 let table = "<table border='1'><thead>";
-                let headers = rows[0].split(",").substring(1,cell.trim().length-1);
+                let headers = rows[0].split(",");
                 table += "<tr>";
                 headers.forEach(header => {
-                    table += `<th>${header.trim()}</th>`;
+                    table += `<th>${header.trim().substring(1,cell.trim().length-1)}</th>`;
                 });
                 table += "</tr></thead><tbody>";
                 let colonne = [];
