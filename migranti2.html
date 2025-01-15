@@ -50,7 +50,7 @@
                 let headers = rows[0].split(",");
                 table += "<tr>";
                 headers.forEach(header => {
-                    table += "<th>${header.trim()}</th>";
+                    table += `<th>${header.trim()}</th>`;
                 });
                 table += "</tr></thead><tbody>";
                 let colonne = [];
@@ -63,7 +63,7 @@
                         colonne.push((Number(cells[1].substring(1,cells[1].length-1))));
 
                         cells.forEach(cell => {
-                            table += "<td>${cell.trim()}</td>";
+                            table += `<td>${cell.trim()}</td>`;
                         });
                         table += "</tr>";
                     }
