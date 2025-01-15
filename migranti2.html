@@ -45,7 +45,7 @@
                 let headers = rows[0].split(",");
                 table += "<tr>";
                 headers.forEach(header => {
-                    table += `<th>${header.trim().substring(1,cell.trim().length-1)}</th>`;
+                    table += `<th>${header.trim()}</th>`;
                 });
                 table += "</tr></thead><tbody>";
                 let colonne = [];
