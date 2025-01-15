@@ -46,7 +46,7 @@
             reader.onload = function () {
                 let content = reader.result;
                 let rows = content.split("\n");
-                let table = "<table border="1"><thead>";
+                let table = "<table border='1'><thead>";
                 let headers = rows[0].split(",");
                 table += "<tr>";
                 headers.forEach(header => {
@@ -76,9 +76,9 @@
         
         function creaGrafico(righe, colonne) {
             
-            let ctx = document.getElementById("grafico").getContext("2d");
+        let ctx = document.getElementById('grafico').getContext('2d');
             chart = new Chart(ctx, {
-                type: "bar",
+                type: 'bar',
                 data: {
                     labels: righe,
                     datasets: [{
