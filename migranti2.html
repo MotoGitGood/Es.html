@@ -46,11 +46,11 @@
             reader.onload = function () {
                 let content = reader.result;
                 let rows = content.split("\n");
-                let table = "<table border='1'><thead>";
+                let table = "<table border="1"><thead>";
                 let headers = rows[0].split(",");
                 table += "<tr>";
                 headers.forEach(header => {
-                    table += `<th>${header.trim()}</th>`;
+                    table += "<th>${header.trim()}</th>";
                 });
                 table += "</tr></thead><tbody>";
                 let colonne = [];
@@ -63,7 +63,7 @@
                         colonne.push((Number(cells[1].substring(1,cells[1].length-1))));
 
                         cells.forEach(cell => {
-                            table += `<td>${cell.trim()}</td>`;
+                            table += "<td>${cell.trim()}</td>";
                         });
                         table += "</tr>";
                     }
@@ -76,15 +76,15 @@
         
         function creaGrafico(righe, colonne) {
             
-            let ctx = document.getElementById('grafico').getContext('2d');
+            let ctx = document.getElementById("grafico").getContext("2d");
             chart = new Chart(ctx, {
-                type: 'bar',
+                type: "bar",
                 data: {
                     labels: righe,
                     datasets: [{
                         data: colonne,
-                        backgroundColor: 'red',
-                        borderColor: 'blue',
+                        backgroundColor: "red",
+                        borderColor: "blue",
                         borderWidth: 1
                     }]
                 },
