@@ -58,7 +58,7 @@
                         colonne.push((Number(cells[1].substring(1,cells[1].length-1))));
 
                         cells.forEach(cell => {
-                            table += `<td>${cell.trim()}</td>`;
+                            table += `<td>${cell.trim().substring(1,cell.trim().length-1)}</td>`;
                         });
                         table += "</tr>";
                     }
